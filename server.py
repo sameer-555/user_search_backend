@@ -42,9 +42,9 @@ def add_user():
 
 @app.route('/user', methods=['GET'])
 def get_users():
-    user_name_prefix = request.args.get('name', '')
-    if user_name_prefix:
-        users = list(collection.find({'name': {'$regex': f'^{user_name_prefix}', '$options': 'i'}}))
+    user_name = request.args.get('name', '')
+    if user_name:
+        users = list(collection.find({'name': {'$regex': f'{user_name}', '$options': 'i'}}))
     else:
         users = list(collection.find({}))
     # Convert objectid to str for serialization
