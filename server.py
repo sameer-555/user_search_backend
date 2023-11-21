@@ -54,5 +54,5 @@ def get_users():
     return jsonify({'users': users})
 
 
-# if __name__ == '__main__':
-#     app.run(port=8000, debug=True)
+if __name__ == '__main__':
+    app.run(port=8000, debug=True)
